@@ -1,0 +1,30 @@
+
+.col {
+    border: 1px solid black;
+}
+.fa{
+  cursor:pointer;
+}
+.first-row{
+  background-color: transparent;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.row{
+  background-color: #fbfbfb;
+}
+.header{
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+.col{
+    border: 1px solid white;
+    padding: 0.25em;
+}
+.jumbotron{background-color: white;}

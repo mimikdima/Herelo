@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="jumbotron text-center">
+    <div class="">
+      <div class="col col-md-10 offset-md-1">
+      <div class=" first-row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-success" type="button" (click)="openAddNewBook()">New Book</button>
+        </div>
+      </div>
+      <div id="contant">
+        <div class="row header">
+          <div class="col col-sm-1">#</div>
+          <div class="col col-sm-3">Author:</div>
+          <div class="col col-sm-3">Title:</div>
+          <div class="col col-sm-3">Date of publish:</div>
+          <div class="col col-sm-1">Edit</div>
+          <div class="col col-sm-1">Delete</div>
+        </div>
+        <div class="row" *ngFor="let book of books;let i = index">
+          <div class="col col-sm-1">{{i+1}}</div>
+          <div class="col col-sm-3">{{book.author }}</div>
+          <div class="col col-sm-3">{{book.title | titlecase | removeSpacialCharacters}}</div>
+          <div class="col col-sm-3">{{book.datePublish}}</div>
+          <div class="col col-sm-1" (click)="openEditBook(book.id)" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
+          <div class="col col-sm-1" (click)="confirmDelete(deleteModel,book.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<ng-template #deleteModel let-modal>
+  <div class="modal-header text-center">
+    <h4 class="modal-title" id="modal-basic-title">Confirm Delete</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalReference.close('Close')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <button class="btn btn-danger" (click)="modalReference.close('delete')">
+          Delete Book
+        </button>
+        <button class="btn btn-error" type="button"
+          (click)="modalReference.close('Cansel')">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
