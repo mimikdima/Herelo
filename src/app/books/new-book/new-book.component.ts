@@ -26,8 +26,8 @@ export class NewBookComponent implements OnInit {
   private createForm() {
     this.myForm = this.formBuilder.group({
       author: new FormControl(null, Validators.required),
-      title: new FormControl(null, Validators.compose([validNameTitle(this.dataService.booksData), Validators.required])),
-      datePublish: new FormControl(null,[Validators.required])
+      title: new FormControl(null, Validators.compose([validNameTitle(this.dataService.booksData,''), Validators.required])),
+      datePublish: new FormControl('', Validators.required)
     });
   }
 
