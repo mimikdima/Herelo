@@ -4,6 +4,7 @@ import { FormGroup, FormControl ,FormBuilder , Validators } from '@angular/forms
 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../data.service';
+import { validNameTitle } from '../../validators/check-title.validator';
 
 @Component({
   selector: 'app-new-book',
@@ -25,7 +26,7 @@ export class NewBookComponent implements OnInit {
   private createForm() {
     this.myForm = this.formBuilder.group({
       author: new FormControl(null, Validators.required),
-      title: new FormControl(null, Validators.required),
+      title: new FormControl(null, Validators.compose([validNameTitle(this.dataService.booksData), Validators.required])),
       datePublish: new FormControl(null,[Validators.required])
     });
   }
