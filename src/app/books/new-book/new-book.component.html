@@ -40,8 +40,13 @@
       <div class="form-group">
         <label for="datePublish">Date Publish</label>
          <div class="input-group">
-        <input class="form-control" type="text" placeholder="yyyy-mm-dd"
-               name="datePublish" formControlName="datePublish" ngbDatepicker #d="ngbDatepicker"
+        <input class="form-control" 
+          type="text" 
+          [readonly]="true"
+          placeholder="Use the calendar button" 
+          name="datePublish" 
+          formControlName="datePublish" 
+          ngbDatepicker #d="ngbDatepicker"
                [ngClass]="{
                  'is-invalid': myForm.get('datePublish').invalid && submittedError,
                  'is-valid': myForm.get('datePublish').valid && submittedError
