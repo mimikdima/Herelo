@@ -34,6 +34,7 @@
           }" />
           <div class="form-control-feedback text-danger" *ngIf="submittedError">
             <p *ngIf="myForm.controls['title'].errors">Title name is required</p>
+            <p *ngIf="myForm.get('title').hasError('validTitle')">Title Name Already Exist</p>
           </div>
       </div>
       <div class="form-group">
