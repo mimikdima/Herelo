@@ -3,7 +3,7 @@ import { FormGroup, FormControl ,FormBuilder , Validators } from '@angular/forms
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { DataService } from '../data.service';
-
+import { validNameTitle } from '../../validators/check-title.validator';
 
 @Component({
   selector: 'app-edit-book',
