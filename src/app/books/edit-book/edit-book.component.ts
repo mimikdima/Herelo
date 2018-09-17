@@ -32,7 +32,7 @@ export class EditBookComponent implements OnInit {
     let date =  datePublish.split("-");
     this.myForm = this.formBuilder.group({
      author: new FormControl(author, Validators.required),
-     title: new FormControl(title, Validators.compose([validNameTitle(this.dataService.booksData), Validators.required])),
+     title: new FormControl(title, Validators.compose([validNameTitle(this.dataService.booksData, title), Validators.required])),
      datePublish: new FormControl({year: Number(date[0]), month: Number(date[1]), day: Number(date[2])}, Validators.required)
    });
  }
